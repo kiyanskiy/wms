@@ -1,0 +1,208 @@
+{
+    "ClientConfiguration": {
+        "ConfigurationName": "ВМС",
+        "ConfigurationDescription": "Создание новой конфигурации",
+        "ConfigurationVersion": "0.0.1",
+        "Processes": [
+            {
+                "ProcessName": "Авторизация",
+                "login_screen": true,
+                "type": "Process",
+                "Operations": [
+                    {
+                        "type": "Operation",
+                        "Name": "Экран авторизации",
+                        "hideBottomBarScreen": true,
+                        "Elements": [
+                            {
+                                "type": "LinearLayout",
+                                "orientation": "horizontal",
+                                "height": "match_parent",
+                                "width": "match_parent",
+                                "Elements": [
+                                    {
+                                        "type": "TextView",
+                                        "orientation": "vertical",
+                                        "height": "match_parent",
+                                        "width": "wrap_content",
+                                        "gravity_horizontal": "left",
+                                        "Value": "Штрихкод",
+                                        "type_s": "Надпись",
+                                        "weight": "0",
+                                        "width_value": "wrap_content",
+                                        "height_value": "match_parent"
+                                    },
+                                    {
+                                        "type": "EditTextText",
+                                        "orientation": "vertical",
+                                        "height": "match_parent",
+                                        "width": "match_parent",
+                                        "gravity_horizontal": "left",
+                                        "Variable": "barcodem",
+                                        "type_s": "Поле ввода строка",
+                                        "weight": "0",
+                                        "width_value": "match_parent",
+                                        "height_value": "match_parent"
+                                    }
+                                ],
+                                "height_value": "match_parent",
+                                "width_value": "match_parent",
+                                "type_s": "Контейнер",
+                                "weight": "0"
+                            },
+                            {
+                                "type": "barcode",
+                                "orientation": "vertical",
+                                "height": "match_parent",
+                                "width": "match_parent",
+                                "Variable": "barcode",
+                                "type_s": "Штрихкод",
+                                "weight": "0",
+                                "width_value": "match_parent",
+                                "height_value": "match_parent"
+                            },
+                            {
+                                "type": "LinearLayout",
+                                "orientation": "vertical",
+                                "height": "match_parent",
+                                "width": "match_parent",
+                                "Elements": [
+                                    {
+                                        "type": "Button",
+                                        "orientation": "vertical",
+                                        "height": "match_parent",
+                                        "width": "match_parent",
+                                        "drawable": "send",
+                                        "Value": "Отправить штрихкод",
+                                        "Variable": "sendBarcode",
+                                        "type_s": "Кнопка",
+                                        "weight": "0",
+                                        "width_value": "match_parent",
+                                        "height_value": "match_parent"
+                                    }
+                                ],
+                                "type_s": "Контейнер",
+                                "height_value": "match_parent",
+                                "width_value": "match_parent",
+                                "weight": "0"
+                            }
+                        ],
+                        "Handlers": [
+                            {
+                                "event": "onStart",
+                                "action": "run",
+                                "listener": "",
+                                "type": "online",
+                                "method": "ПередАвторизацией",
+                                "postExecute": "",
+                                "alias": ""
+                            },
+                            {
+                                "event": "onInput",
+                                "action": "run",
+                                "listener": "barcode",
+                                "type": "online",
+                                "method": "СканированиеШтрихкода",
+                                "postExecute": "",
+                                "alias": ""
+                            },
+                            {
+                                "event": "onInput",
+                                "action": "run",
+                                "listener": "sendBarcode",
+                                "type": "online",
+                                "method": "ВводШтрихкодаВручную",
+                                "postExecute": "",
+                                "alias": ""
+                            },
+                            {
+                                "event": "onInput",
+                                "action": "run",
+                                "listener": "PasswordEnter",
+                                "type": "online",
+                                "method": "ВводПароля",
+                                "postExecute": "",
+                                "alias": ""
+                            },
+                            {
+                                "event": "onInput",
+                                "action": "run",
+                                "listener": "LayoutAction",
+                                "type": "set",
+                                "method": "noRefresh",
+                                "postExecute": "",
+                                "alias": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "Process",
+                "ProcessName": "Завершение работы",
+                "Operations": [
+                    {
+                        "type": "Operation",
+                        "Name": "Выход",
+                        "Elements": [],
+                        "Handlers": [
+                            {
+                                "event": "onStart",
+                                "action": "run",
+                                "listener": "",
+                                "type": "online",
+                                "method": "onStartЗавершитьРаботу",
+                                "postExecute": "",
+                                "alias": ""
+                            },
+                            {
+                                "event": "onInput",
+                                "action": "run",
+                                "listener": "questionExit",
+                                "type": "online",
+                                "method": "ЗавершитьРаботуПослеВопроса",
+                                "postExecute": "",
+                                "alias": ""
+                            }
+                        ],
+                        "hideBottomBarScreen": true
+                    }
+                ]
+            }
+        ],
+        "ConfigurationSettings": {
+            "uid": "4ae629f6d62a4f948c17c98fa2582214",
+            "dictionaries": "",
+            "vendor": "",
+            "vendor_url": "",
+            "vendor_password": "",
+            "handler_split_mode": false,
+            "handler_url": "",
+            "handler_password": ""
+        },
+        "host_uid": "58be61e130c34ee6a81b58194aeb1091",
+        "ConfigurationTags": "Py,off-line",
+        "ConfigurationFileName": "",
+        "agent": false,
+        "ForegroundService": false,
+        "StopForegroundServiceOnExit": false,
+        "BroadcastIntent": "",
+        "BroadcastVariable": "",
+        "FaceRecognitionURL": "",
+        "OnKeyboardMain": false,
+        "LaunchProcess": "",
+        "LaunchVar": "",
+        "MenuWebTemplate": "",
+        "Launch": "",
+        "HTMLHead": "",
+        "HTMLdocument_ready": "",
+        "PyGeneral": "",
+        "PelicanInit": "",
+        "Layouts": [],
+        "uid": "b7442f14f3f544a7932181bb2a6fa881",
+        "GitHubHandlers": "https://api.github.com/repos/kiyanskiy/wms/contents/handlers.py",
+        "GitHubToken": "",
+        "PyHandlers": "aW1wb3J0IGpzb24KaW1wb3J0IHV1aWQKaW1wb3J0IHJhbmRvbQppbXBvcnQgcmVxdWVzdHMKCgpmcm9tIHRocmVhZGluZyBpbXBvcnQgVGltZXIKaW1wb3J0IHRpbWUKCgpkZWYgYnRuX2V4aXQoaGFzaE1hcCxfZmlsZXM9Tm9uZSxfZGF0YT1Ob25lKToKICAgIAogICAgaGFzaE1hcC5wdXQoIlNob3dEaWFsb2ciLCLQl9Cw0L/Rg9GB0YLQuNGC0Ywg0YTQvtGA0LzQsNGC0LjRgNC+0LLQsNC90LjQtSDQtNC40YHQutCwIEM6PyIpCiAgICBoYXNoTWFwLnB1dCgiU2hvd0RpYWxvZ1N0eWxlIixqc29uLmR1bXBzKHsieWVzIjoi0JLRi9C/0L7Qu9C90LjRgtGMIiwibm8iOiLQntGC0LzQtdC90LjRgtGMIiwidGl0bGUiOiLQo9GC0L7Rh9C90LXQvdC40LUifSkpCiAgICAKICAgIHJldHVybiBoYXNoTWFwICAgICAgICAgICAgCgo=",
+        "RunPython": true
+    }
+}
