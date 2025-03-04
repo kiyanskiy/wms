@@ -174,11 +174,12 @@
             "uid": "4ae629f6d62a4f948c17c98fa2582214",
             "dictionaries": "",
             "vendor": "",
-            "vendor_url": "",
+            "vendor_url": "https://api.github.com/repos/kiyanskiy/wms/contents/wms.ui",
             "vendor_password": "",
             "handler_split_mode": false,
-            "handler_url": "",
-            "handler_password": ""
+            "handler_url": "http://192.168.0.138/simpleUI/hs/simpleui",
+            "handler_password": "admin",
+            "handler_auth": "Basic YWRtaW46YWRtaW4="
         },
         "host_uid": "58be61e130c34ee6a81b58194aeb1091",
         "ConfigurationTags": "Py,off-line",
