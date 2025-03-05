@@ -55,7 +55,7 @@
                                 "orientation": "vertical",
                                 "height": "match_parent",
                                 "width": "match_parent",
-                                "Variable": "SCAN_BARCODE1",
+                                "Variable": "barcode",
                                 "type_s": "Штрихкод",
                                 "weight": "0",
                                 "width_value": "match_parent",
@@ -100,7 +100,7 @@
                             {
                                 "event": "onInput",
                                 "action": "run",
-                                "listener": "SCAN_BARCODE1",
+                                "listener": "barcode",
                                 "type": "online",
                                 "method": "СканированиеШтрихкода",
                                 "postExecute": "",
