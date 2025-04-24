@@ -177,13 +177,13 @@
             "vendor_url": "https://api.github.com/repos/kiyanskiy/wms/contents/wms.ui",
             "vendor_password": "",
             "handler_split_mode": false,
-            "handler_url": "http://192.168.0.138/simpleUI/hs/simpleui",
-            "handler_password": "admin",
-            "handler_auth": "Basic YWRtaW46YWRtaW4="
+            "handler_url": "http://server.ventustriy.com.ua/wms/hs/exchangetsd",
+            "handler_password": "12345678900",
+            "handler_auth": "Basic 0JDQtNC80LjQvdC40YHRgtGA0LDRgtC+0YA6MTIzNDU2Nzg5MDA="
         },
         "host_uid": "58be61e130c34ee6a81b58194aeb1091",
         "ConfigurationTags": "Py,off-line",
-        "ConfigurationFileName": "download_file_26",
+        "ConfigurationFileName": "",
         "agent": false,
         "ForegroundService": false,
         "StopForegroundServiceOnExit": false,
